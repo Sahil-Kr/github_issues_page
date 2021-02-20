@@ -1,0 +1,7 @@
+.IssuesList {
+  max-width: 72rem;
+  margin: 0 auto;
+  border: 1.5px solid rgba(204, 204, 204, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}

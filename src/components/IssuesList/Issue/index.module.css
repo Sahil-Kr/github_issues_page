@@ -1,0 +1,28 @@
+.Issue {
+  background-color: #0d1117;
+  padding: 8px 20px;
+  text-align: left;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.1);
+
+  display: flex;
+}
+
+.Issue:hover {
+  background-color: #161b22;
+}
+
+.Icon {
+  fill: #56d364;
+  transform: translateY(15%);
+  margin-right: 8px;
+}
+
+.Title {
+  color: white;
+  font-weight: 400;
+}
+
+.SubTitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.72rem;
+}
