@@ -4,6 +4,7 @@ import classes from "./index.module.css";
 
 const IssuesList = () => {
   const [issuesData, setIssuesData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchData();
@@ -17,14 +18,21 @@ const IssuesList = () => {
     const issues = await res.json();
     console.log(issues);
     setIssuesData(issues);
+    setLoading(false);
   };
 
   return (
-    <div className={classes.IssuesList}>
-      {issuesData.map((issue) => (
-        <Issue key={issue.id} issue={issue} />
-      ))}
-    </div>
+    <>
+      {loading ? (
+        <p style={{ color: "white" }}>Loading...</p>
+      ) : (
+        <div className={classes.IssuesList}>
+          {issuesData.map((issue) => (
+            <Issue key={issue.id} issue={issue} />
+          ))}
+        </div>
+      )}
+    </>
   );
 };
 
