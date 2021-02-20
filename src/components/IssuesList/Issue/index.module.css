@@ -20,6 +20,11 @@
 .Title {
   color: white;
   font-weight: 400;
+  cursor: pointer;
+}
+
+.Title:hover {
+  color: #58a6ff;
 }
 
 .SubTitle {

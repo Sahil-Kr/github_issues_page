@@ -1,0 +1,11 @@
+.Label {
+  display: inline-block;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  height: 1rem;
+  padding: 0 6px;
+  filter: opacity(0.85);
+  margin-left: 8px;
+  color: white;
+  cursor: pointer;
+}
