@@ -1,6 +1,7 @@
 import React from "react";
 import Label from "../../Label";
 import classes from "./index.module.css";
+import { Link } from "react-router-dom";
 
 const Issue = ({ issue }) => {
   const getDuration = () => {
@@ -16,18 +17,15 @@ const Issue = ({ issue }) => {
 
   return (
     <div className={classes.Issue}>
-      <svg
-        className={classes.Icon}
-        viewBox="0 0 16 16"
-        version="1.1"
-        width="16"
-        height="16"
-        aria-hidden="true"
-      >
-        <path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z"></path>
-      </svg>
+      <div className={classes.Icon}>
+        <svg>
+          <path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z"></path>
+        </svg>
+      </div>
       <div>
-        <span className={classes.Title}>{issue.title}</span>
+        <Link className={classes.Link} to={`/${issue.number}`}>
+          <span className={classes.Title}>{issue.title}</span>
+        </Link>
         {issue.labels.map((label) => (
           <Label key={label.id} label={label} />
         ))}

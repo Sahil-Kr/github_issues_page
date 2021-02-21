@@ -12,9 +12,20 @@
 }
 
 .Icon {
-  fill: #56d364;
-  transform: translateY(15%);
+  display: inline-block;
   margin-right: 8px;
+}
+
+.Icon svg {
+  fill: #56d364;
+  height: 1rem;
+  width: 1rem;
+}
+
+.Link,
+.Link:active,
+.Link:visited {
+  text-decoration: none;
 }
 
 .Title {

@@ -1,14 +1,19 @@
 import IssuesList from "./components/IssuesList";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
+import IssueDetail from "./components/IssueDetail";
+import Home from "./components/Home";
 
 function App() {
   return (
-    <div className="App">
-      <div style={{ marginBottom: "2rem", color: "white" }}>
-        Still working on this not finished yet!
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/:id" component={IssueDetail} />
+        </Switch>
       </div>
-      <IssuesList />
-    </div>
+    </Router>
   );
 }
 

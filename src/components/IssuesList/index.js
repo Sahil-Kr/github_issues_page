@@ -25,8 +25,10 @@ const IssuesList = () => {
   };
 
   const fetchPagination = async () => {
+    if (!morePages) return;
     setLoading(true);
-    console.log(`fetching page${pageNo} data....`);
+
+    console.log(`fetching page ${pageNo} data....`);
     const res = await fetch(
       `https://api.github.com/repos/facebook/create-react-app/issues?page=${pageNo}&per_page=30`
     );
@@ -35,8 +37,9 @@ const IssuesList = () => {
 
     console.log(issues);
 
-    if (!issues) {
+    if (!issues || issues.length === 0) {
       setMorePages(false);
+      setLoading(false);
       return;
     }
 
@@ -53,9 +56,12 @@ const IssuesList = () => {
           <Issue key={issue.id} issue={issue} />
         ))}
       </div>
-      )
       <span onClick={fetchPagination} className={classes.LoadMore}>
-        {morePages && !loading ? "Load More" : !loading ? "--- That's all" : ""}
+        {morePages && !loading
+          ? "Load More"
+          : !loading
+          ? "--- That's all ---"
+          : ""}
       </span>
     </>
   );
