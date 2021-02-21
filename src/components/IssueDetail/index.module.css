@@ -1,14 +1,19 @@
 .Container {
-  margin: 4rem 5rem;
+  margin: 4rem 2rem;
+
+  max-width: 65rem;
+  min-width: 15rem;
   display: flex;
 }
 
 .UserImage {
   display: inline-block;
-  border-radius: 20rem;
+  border-radius: 5rem;
   overflow: hidden;
   height: 3.5rem;
   width: 3.5rem;
+  min-width: 3.5rem;
+  min-height: 3.5rem;
   background-size: cover;
   background-position: center;
   background-color: aquamarine;
@@ -22,7 +27,6 @@
 
 .CommentsCont {
   margin-left: 8px;
-  max-width: 60%;
   text-align: left;
   border: 1.5px solid rgba(204, 204, 204, 0.2);
   border-radius: 8px;
